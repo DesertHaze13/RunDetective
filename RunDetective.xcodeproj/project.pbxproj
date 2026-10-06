@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 71;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16A6672E4EF24588A9129577 /* RunDetectiveWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 63A93E1AA44B4B8FBF9B9E1A /* RunDetectiveWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		220811D039EC41F6BD278BF2 /* RunModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327FCD2CE162443989E70DE3 /* RunModels.swift */; };
+		2C677B187EFB46E697D2B245 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8134D044270F406898B9CE14 /* DashboardView.swift */; };
+		33C05917A718431CBBB48F49 /* RunDetectiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CDA4E4BF8B4420AC752948 /* RunDetectiveApp.swift */; };
+		A1B2C3D4E5F60718293A4B5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B5C /* Assets.xcassets */; };
+		B1B2C3D4E5F60718293A4B5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1B2C3D4E5F60718293A4B5C /* Assets.xcassets */; };
+		B3E6FFC8D65D4E488F045BAF /* RunDetectiveWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235305FE583340E29188926A /* RunDetectiveWatchApp.swift */; };
+		DFC1ED60D94D4A139371487D /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6563C12111F4EF3962ADC31 /* HealthStore.swift */; };
+		ED0BC689334F48E18111DCCC /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E5796216C5413A863086F8 /* RootView.swift */; };
+		858367B95CA1426CB89758F6 /* HistoryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EC0F6F844E486DB3F657C1 /* HistoryViews.swift */; };
+		9C6AA240CF234167BF8C5E8A /* TrendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFDBEE314134577BFE59C21 /* TrendsView.swift */; };
+		3384818CA2BC4DFC9974FB3E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FCE570306149BF9DC2E9CE /* SettingsView.swift */; };
+		ED60610F967E474DBBD0A381 /* DetectiveComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5C00216851485F944FD23A /* DetectiveComponents.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		806B4D5D34034BA2889787C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B616E12F6325412F91EB395E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDCD32E96C024B78B7D8A979;
+			remoteInfo = RunDetectiveWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B56DA6CADFEF475C9DC42B3C /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				16A6672E4EF24588A9129577 /* RunDetectiveWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		235305FE583340E29188926A /* RunDetectiveWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RunDetectiveWatchApp.swift; path = Sources/Watch/App/RunDetectiveWatchApp.swift; sourceTree = SOURCE_ROOT; };
+		327FCD2CE162443989E70DE3 /* RunModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RunModels.swift; path = Sources/iOS/Domain/RunModels.swift; sourceTree = SOURCE_ROOT; };
+		50CDA4E4BF8B4420AC752948 /* RunDetectiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RunDetectiveApp.swift; path = Sources/iOS/App/RunDetectiveApp.swift; sourceTree = SOURCE_ROOT; };
+		63A93E1AA44B4B8FBF9B9E1A /* RunDetectiveWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunDetectiveWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		73BBA34CF81F47EBB4F051B8 /* RunDetective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunDetective.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8134D044270F406898B9CE14 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashboardView.swift; path = Sources/iOS/Features/Today/DashboardView.swift; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4E5F60718293A4B5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/iOS/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		B1B2C3D4E5F60718293A4B5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Watch/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		D6563C12111F4EF3962ADC31 /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HealthStore.swift; path = Sources/iOS/Services/HealthStore.swift; sourceTree = SOURCE_ROOT; };
+		60E5796216C5413A863086F8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RootView.swift; path = Sources/iOS/App/RootView.swift; sourceTree = SOURCE_ROOT; };
+		82EC0F6F844E486DB3F657C1 /* HistoryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryViews.swift; path = Sources/iOS/Features/History/HistoryViews.swift; sourceTree = SOURCE_ROOT; };
+		FBFDBEE314134577BFE59C21 /* TrendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrendsView.swift; path = Sources/iOS/Features/Trends/TrendsView.swift; sourceTree = SOURCE_ROOT; };
+		67FCE570306149BF9DC2E9CE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = Sources/iOS/Features/Settings/SettingsView.swift; sourceTree = SOURCE_ROOT; };
+		CF5C00216851485F944FD23A /* DetectiveComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetectiveComponents.swift; path = Sources/iOS/DesignSystem/DetectiveComponents.swift; sourceTree = SOURCE_ROOT; };
+		7403899F089948DFB3D5A34B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/iOS/Info.plist; sourceTree = SOURCE_ROOT; };
+		996884E56E9C44A89585644C /* RunDetective.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = RunDetective.entitlements; path = Resources/iOS/RunDetective.entitlements; sourceTree = SOURCE_ROOT; };
+		C0349650F7464FC18DA989C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Watch/Info.plist; sourceTree = SOURCE_ROOT; };
+		F8F3DA12FDF84AEEA6F8CBA2 /* RunDetective.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = RunDetective.entitlements; path = Resources/Watch/RunDetective.entitlements; sourceTree = SOURCE_ROOT; };
+		40523939B742480CA87930B3 /* RunDetective.icon */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RunDetective.icon; path = Resources/IconSource/RunDetective.icon; sourceTree = SOURCE_ROOT; };
+		CE62BF934E5D4316984207A1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = README.md; sourceTree = SOURCE_ROOT; };
+		2B019A1C4B5341DE91A5C16E /* CALCULATIONS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CALCULATIONS.md; path = Documentation/CALCULATIONS.md; sourceTree = SOURCE_ROOT; };
+		C38171163C6D42F5BA9C379E /* PROJECT_STRUCTURE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = PROJECT_STRUCTURE.md; path = Documentation/PROJECT_STRUCTURE.md; sourceTree = SOURCE_ROOT; };
+		EC94B0C4E7BC4D71820497DB /* Screenshots */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Screenshots; path = Documentation/Screenshots; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0CF9DD7AC4AE439699C6603D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		151296B096A048C49F4C01C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43BC2230FC7F4D059E4779B9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				50CDA4E4BF8B4420AC752948 /* RunDetectiveApp.swift */,
+				60E5796216C5413A863086F8 /* RootView.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		68F014EDE7CA420D8B60FF28 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				8134D044270F406898B9CE14 /* DashboardView.swift */,
+			);
+			name = Today;
+			sourceTree = "<group>";
+		};
+		BDA13B4472BB4DB3BC0693E2 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				82EC0F6F844E486DB3F657C1 /* HistoryViews.swift */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
+		A7AC471E02034210B08B513A /* Trends */ = {
+			isa = PBXGroup;
+			children = (
+				FBFDBEE314134577BFE59C21 /* TrendsView.swift */,
+			);
+			name = Trends;
+			sourceTree = "<group>";
+		};
+		51C782610BAF438D98294A65 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				67FCE570306149BF9DC2E9CE /* SettingsView.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		B14C915F74304A08A14D8611 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				68F014EDE7CA420D8B60FF28 /* Today */,
+				BDA13B4472BB4DB3BC0693E2 /* History */,
+				A7AC471E02034210B08B513A /* Trends */,
+				51C782610BAF438D98294A65 /* Settings */,
+			);
+			name = Features;
+			sourceTree = "<group>";
+		};
+		A062CF53919A43FA91DC876A /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				CF5C00216851485F944FD23A /* DetectiveComponents.swift */,
+			);
+			name = DesignSystem;
+			sourceTree = "<group>";
+		};
+		9E152F3B26024DC6BF1CEF8B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				43BC2230FC7F4D059E4779B9 /* App */,
+				B14C915F74304A08A14D8611 /* Features */,
+				A062CF53919A43FA91DC876A /* DesignSystem */,
+				8BF06A9DFD8C4634A36ED7BB /* Services */,
+				01334E4E37704A4E89E892DF /* Domain */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		EAD7B47BCB0845A3BD60C94E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				235305FE583340E29188926A /* RunDetectiveWatchApp.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		866AD6C0A5BA4C138B28D5AA /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				EAD7B47BCB0845A3BD60C94E /* App */,
+			);
+			name = Watch;
+			sourceTree = "<group>";
+		};
+		8BF06A9DFD8C4634A36ED7BB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D6563C12111F4EF3962ADC31 /* HealthStore.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		01334E4E37704A4E89E892DF /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				327FCD2CE162443989E70DE3 /* RunModels.swift */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
+		1B5CB55852B8441883E091FC /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9E152F3B26024DC6BF1CEF8B /* iOS */,
+				866AD6C0A5BA4C138B28D5AA /* Watch */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		0E8D9AF49C824A749ACA6C4B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F60718293A4B5C /* Assets.xcassets */,
+				7403899F089948DFB3D5A34B /* Info.plist */,
+				996884E56E9C44A89585644C /* RunDetective.entitlements */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		355116AA3D4F42FB8FF19A3A /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				B1B2C3D4E5F60718293A4B5C /* Assets.xcassets */,
+				C0349650F7464FC18DA989C6 /* Info.plist */,
+				F8F3DA12FDF84AEEA6F8CBA2 /* RunDetective.entitlements */,
+			);
+			name = Watch;
+			sourceTree = "<group>";
+		};
+		464563FEB5E7471991D775C7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0E8D9AF49C824A749ACA6C4B /* iOS */,
+				355116AA3D4F42FB8FF19A3A /* Watch */,
+				40523939B742480CA87930B3 /* RunDetective.icon */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		57EB5B53E46446A5A726A967 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				2B019A1C4B5341DE91A5C16E /* CALCULATIONS.md */,
+				C38171163C6D42F5BA9C379E /* PROJECT_STRUCTURE.md */,
+				EC94B0C4E7BC4D71820497DB /* Screenshots */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+		E0EF5FD744AC44398A62D7ED /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				1B5CB55852B8441883E091FC /* Sources */,
+				464563FEB5E7471991D775C7 /* Resources */,
+				57EB5B53E46446A5A726A967 /* Documentation */,
+				CE62BF934E5D4316984207A1 /* README.md */,
+				FF6327FB66D04687B612F3DD /* Products */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
+		FF6327FB66D04687B612F3DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				73BBA34CF81F47EBB4F051B8 /* RunDetective.app */,
+				63A93E1AA44B4B8FBF9B9E1A /* RunDetectiveWatch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00AB25200097454AA9E1E7B1 /* RunDetective */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66DE1E6EB46240C591A12F8A /* Build configuration list for PBXNativeTarget "RunDetective" */;
+			buildPhases = (
+				EE7A0CC3296F4B10AF65047E /* Sources */,
+				0CF9DD7AC4AE439699C6603D /* Frameworks */,
+				E746B87D33614D90BD3022FA /* Resources */,
+				B56DA6CADFEF475C9DC42B3C /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74816DE689084D0FB5006896 /* PBXTargetDependency */,
+			);
+			name = RunDetective;
+			productName = RunDetective;
+			productReference = 73BBA34CF81F47EBB4F051B8 /* RunDetective.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BDCD32E96C024B78B7D8A979 /* RunDetectiveWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2F63DE0896B4A86AE42B2AF /* Build configuration list for PBXNativeTarget "RunDetectiveWatch" */;
+			buildPhases = (
+				B6A941DC7E074F51BC9C30B8 /* Sources */,
+				151296B096A048C49F4C01C7 /* Frameworks */,
+				3DBC02886D0243DBB0CE070F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RunDetectiveWatch;
+			productName = RunDetectiveWatch;
+			productReference = 63A93E1AA44B4B8FBF9B9E1A /* RunDetectiveWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B616E12F6325412F91EB395E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					00AB25200097454AA9E1E7B1 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+					BDCD32E96C024B78B7D8A979 = {
+						CreatedOnToolsVersion = 27.0;
+					};
+				};
+			};
+			buildConfigurationList = A0B5C080DCEF4D908A778E57 /* Build configuration list for PBXProject "RunDetective" */;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E0EF5FD744AC44398A62D7ED;
+			productRefGroup = FF6327FB66D04687B612F3DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00AB25200097454AA9E1E7B1 /* RunDetective */,
+				BDCD32E96C024B78B7D8A979 /* RunDetectiveWatch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3DBC02886D0243DBB0CE070F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1B2C3D4E5F60718293A4B5D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E746B87D33614D90BD3022FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D4E5F60718293A4B5D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B6A941DC7E074F51BC9C30B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3E6FFC8D65D4E488F045BAF /* RunDetectiveWatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE7A0CC3296F4B10AF65047E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33C05917A718431CBBB48F49 /* RunDetectiveApp.swift in Sources */,
+				2C677B187EFB46E697D2B245 /* DashboardView.swift in Sources */,
+				220811D039EC41F6BD278BF2 /* RunModels.swift in Sources */,
+				DFC1ED60D94D4A139371487D /* HealthStore.swift in Sources */,
+				ED0BC689334F48E18111DCCC /* RootView.swift in Sources */,
+				858367B95CA1426CB89758F6 /* HistoryViews.swift in Sources */,
+				9C6AA240CF234167BF8C5E8A /* TrendsView.swift in Sources */,
+				3384818CA2BC4DFC9974FB3E /* SettingsView.swift in Sources */,
+				ED60610F967E474DBBD0A381 /* DetectiveComponents.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		74816DE689084D0FB5006896 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDCD32E96C024B78B7D8A979 /* RunDetectiveWatch */;
+			targetProxy = 806B4D5D34034BA2889787C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		21576D670A014918974647F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resources/Watch/RunDetective.entitlements;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 7388ZR99UP;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rundetective.app.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		38F9117EFAEF4F4ABDDFC1C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resources/iOS/RunDetective.entitlements;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 7388ZR99UP;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/iOS/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rundetective.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3D5486EB20E34316A4C299DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resources/iOS/RunDetective.entitlements;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 7388ZR99UP;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/iOS/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rundetective.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5B416074F8684D378591742C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		63859A24C74844EC9660D8EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resources/Watch/RunDetective.entitlements;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 7388ZR99UP;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Resources/Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rundetective.app.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		CB4748188A7D4D8A8A890280 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG = 1;
+				DEVELOPMENT_TEAM = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		66DE1E6EB46240C591A12F8A /* Build configuration list for PBXNativeTarget "RunDetective" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D5486EB20E34316A4C299DD /* Debug */,
+				38F9117EFAEF4F4ABDDFC1C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0B5C080DCEF4D908A778E57 /* Build configuration list for PBXProject "RunDetective" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB4748188A7D4D8A8A890280 /* Debug */,
+				5B416074F8684D378591742C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2F63DE0896B4A86AE42B2AF /* Build configuration list for PBXNativeTarget "RunDetectiveWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63859A24C74844EC9660D8EB /* Debug */,
+				21576D670A014918974647F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B616E12F6325412F91EB395E /* Project object */;
+}

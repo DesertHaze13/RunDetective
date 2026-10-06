@@ -1,0 +1,21 @@
+{
+  "fill": {
+    "solid": "extended-srgb:0.04500,0.11000,0.27000,1.00000"
+  },
+  "groups": [
+    {
+      "layers": [
+        {
+          "image-name": "GlassRunner.png",
+          "name": "Glass Runner Illustration"
+        }
+      ]
+    }
+  ],
+  "supported-platforms": {
+    "circles": [
+      "watchOS"
+    ],
+    "squares": "shared"
+  }
+}
