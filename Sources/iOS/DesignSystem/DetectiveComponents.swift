@@ -64,6 +64,7 @@ struct CaseMotion: ViewModifier {
     let scroll: Bool
     let suppressTap: Bool
     @State private var flashing = false
+    @State private var appeared = false
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     @ViewBuilder func body(content: Content) -> some View {
@@ -78,8 +79,14 @@ struct CaseMotion: ViewModifier {
             .overlay(alignment: .bottomLeading) { spark("plus", x: -11, y: 10) }
             .overlay(alignment: .bottomTrailing) { spark("sparkle", x: 9, y: 13) }
             .scaleEffect(flashing && !reduceMotion ? 0.975 : 1)
+            .opacity(appeared ? 1 : 0)
+            .offset(y: appeared || reduceMotion ? 0 : 16)
             .simultaneousGesture(TapGesture().onEnded { if !suppressTap { burst() } })
             .sensoryFeedback(.selection, trigger: flashing)
+            .onAppear {
+                guard !appeared else { return }
+                withAnimation(reduceMotion ? nil : .smooth(duration: 0.55)) { appeared = true }
+            }
 
         if scroll && !reduceMotion {
             decorated.scrollTransition(.animated(.spring(response: 0.58, dampingFraction: 0.73))) { view, phase in
@@ -112,6 +119,70 @@ struct CaseMotion: ViewModifier {
             try? await Task.sleep(for: .milliseconds(600))
             withAnimation(.easeOut(duration: 0.35)) { flashing = false }
         }
+    }
+}
+
+struct EvidenceOrb: View {
+    let symbol: String
+    let tint: Color
+    @State private var orbiting = false
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    var body: some View {
+        ZStack {
+            Circle().fill(tint.opacity(0.12)).frame(width: 74, height: 74)
+            Circle().stroke(tint.opacity(0.25), lineWidth: 1).frame(width: 58, height: 58)
+            Circle()
+                .stroke(tint.opacity(0.45), style: StrokeStyle(lineWidth: 1.5, dash: [3, 8]))
+                .frame(width: 74, height: 74)
+                .rotationEffect(.degrees(orbiting && !reduceMotion ? 360 : 0))
+            Circle()
+                .fill(tint)
+                .frame(width: 7, height: 7)
+                .offset(y: -37)
+                .rotationEffect(.degrees(orbiting && !reduceMotion ? 360 : 0))
+                .shadow(color: tint.opacity(0.55), radius: 6)
+            Image(systemName: symbol)
+                .font(.system(size: 27, weight: .medium))
+                .foregroundStyle(tint)
+                .symbolRenderingMode(.hierarchical)
+        }
+        .frame(width: 78, height: 78)
+        .accessibilityHidden(true)
+        .allowsHitTesting(false)
+        .onAppear {
+            guard !reduceMotion, !orbiting else { return }
+            withAnimation(.linear(duration: 12).repeatForever(autoreverses: false)) { orbiting = true }
+        }
+    }
+}
+
+struct CasePageHeader: View {
+    let eyebrow: String
+    let title: String
+    let subtitle: String
+    let symbol: String
+    let tint: Color
+
+    var body: some View {
+        HStack(alignment: .center, spacing: 12) {
+            VStack(alignment: .leading, spacing: 5) {
+                Text(eyebrow.uppercased())
+                    .font(.caption2.weight(.bold)).tracking(2).foregroundStyle(tint)
+                Text(title)
+                    .font(.system(.title, design: .rounded, weight: .bold))
+                    .minimumScaleFactor(0.8)
+                Text(subtitle)
+                    .font(.subheadline).foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            Spacer(minLength: 0)
+            EvidenceOrb(symbol: symbol, tint: tint)
+        }
+        .padding(18)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 24))
+        .caseMotion(tint: tint, scroll: false, suppressTap: true)
     }
 }
 

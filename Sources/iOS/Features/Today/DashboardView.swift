@@ -102,7 +102,15 @@ struct DashboardView: View {
                     Text("The case file").font(.system(size: 38, weight: .bold, design: .rounded)).tracking(-1.2)
                 }
                 Spacer()
-                Button { withAnimation(.spring(response: 0.32, dampingFraction: 0.68)) { showClue.toggle() } } label: { Image(systemName: "sparkle.magnifyingglass").font(.title2).symbolEffect(.bounce, value: showClue).frame(width: 46, height: 46).background(.mint.opacity(0.15), in: Circle()) }.buttonStyle(AnimatedCardButtonStyle()).accessibilityLabel("Reveal a clue")
+                Button {
+                    withAnimation(reduceMotion ? nil : .spring(response: 0.36, dampingFraction: 0.66)) { showClue.toggle() }
+                } label: {
+                    EvidenceOrb(symbol: "sparkle.magnifyingglass", tint: .teal)
+                        .scaleEffect(showClue && !reduceMotion ? 1.1 : 1)
+                }
+                .buttonStyle(AnimatedCardButtonStyle())
+                .sensoryFeedback(.selection, trigger: showClue)
+                .accessibilityLabel("Reveal a clue")
             }
             HStack(spacing: 7) {
                 Image(systemName: health.loading ? "arrow.triangle.2.circlepath" : health.error != nil ? "exclamationmark.circle.fill" : "checkmark.circle.fill")
@@ -141,6 +149,7 @@ struct DashboardView: View {
         .padding(16)
         .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 20))
         .accessibilityElement(children: .contain)
+        .caseMotion(tint: .mint, scroll: false)
     }
     private func weekRow(offset: Int) -> some View {
         VStack(alignment: .leading, spacing: 3) {

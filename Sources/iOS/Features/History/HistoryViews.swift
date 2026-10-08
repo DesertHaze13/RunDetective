@@ -5,6 +5,9 @@ struct HistoryView: View {
     @EnvironmentObject var health: HealthStore
     var body: some View {
         List {
+            CasePageHeader(eyebrow: "The archive", title: "Every clue counts", subtitle: "Open a day to inspect each original workout.", symbol: "calendar", tint: .teal)
+                .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                .listRowBackground(Color.clear)
             if health.workouts.isEmpty {
                 ContentUnavailableView {
                     Label("No cases yet", systemImage: "figure.run.circle")
@@ -33,6 +36,9 @@ struct DayView: View {
     let day: ActivitySummary
     var body: some View {
         List {
+            CasePageHeader(eyebrow: "Daily file", title: day.date.formatted(date: .abbreviated, time: .omitted), subtitle: "\(day.workouts.count) original session\(day.workouts.count == 1 ? "" : "s") · \(Format.distance(day.distance)) total", symbol: "square.stack.3d.up", tint: .mint)
+                .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                .listRowBackground(Color.clear)
             Section("Daily totals") {
                 Label("Combined from \(day.workouts.count) original workout\(day.workouts.count == 1 ? "" : "s")", systemImage: "sum").font(.footnote).foregroundStyle(.secondary)
                 detail("Distance", Format.distance(day.distance)); detail("Duration", Format.duration(day.duration)); detail("Workout pace", Format.pace(day.pace)); detail("Average HR", Format.number(day.averageHR, unit: "bpm")); detail("Maximum HR", Format.number(day.maximumHR, unit: "bpm")); detail("Active energy", Format.number(day.energy, unit: "kcal")); detail("Elevation gain", Format.number(day.elevationGain, unit: "m"))
@@ -45,10 +51,14 @@ struct DayView: View {
 
 struct WorkoutView: View {
     @EnvironmentObject var health: HealthStore
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     let workout: RunWorkout
     @State private var route: [CLLocation] = []
     var body: some View {
         List {
+            CasePageHeader(eyebrow: "Original workout", title: workout.kind.title, subtitle: workout.start.formatted(date: .complete, time: .shortened), symbol: workout.kind.symbol, tint: .mint)
+                .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                .listRowBackground(Color.clear)
             if route.count > 1 { Section { Map { MapPolyline(coordinates: route.map(\.coordinate)).stroke(.mint, lineWidth: 5); Marker("Start", coordinate: route.first!.coordinate); Marker("Finish", coordinate: route.last!.coordinate) }.frame(height: 260).caseMotion(tint: .mint, scroll: false).listRowInsets(EdgeInsets()) } }
             Section("Workout") {
                 Label("Original Apple Health workout", systemImage: workout.kind.symbol).font(.footnote).foregroundStyle(.secondary)
@@ -59,6 +69,9 @@ struct WorkoutView: View {
                 Section("Most comparable") { detail("Date", comparable.start.formatted(date: .abbreviated, time: .omitted)); detail("Distance", Format.distance(comparable.distance)); detail("Pace change", "\(Int(abs(old - pace).rounded())) sec/km \(pace < old ? "faster" : "slower")"); if let hr = workout.averageHR, let previous = comparable.averageHR { detail("HR change", "\(Int(abs(hr - previous).rounded())) bpm \(hr < previous ? "lower" : "higher")") }; Text("Matched by activity, distance and duration. Route and conditions may differ.").font(.footnote).foregroundStyle(.secondary) }
             }
             Section("Detective note") { CardClue(lines: ["Measured values came from Health. Pace did the division.", "An unavailable metric is an honest clue, not a zero."]) }
-        }.scrollContentBackground(.hidden).background(AmbientBackdrop()).navigationTitle(workout.kind.title).task { route = await health.loadRoute(for: workout) }
+        }.scrollContentBackground(.hidden).background(AmbientBackdrop()).navigationTitle(workout.kind.title).task {
+            let loaded = await health.loadRoute(for: workout)
+            withAnimation(reduceMotion ? nil : .smooth(duration: 0.55)) { route = loaded }
+        }
     }
 }

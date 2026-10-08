@@ -3,6 +3,7 @@ import Charts
 
 struct TrendsView: View {
     @EnvironmentObject var health: HealthStore
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var count = 8
     @State private var revealCharts = false
     @State private var selectedWeekDate: Date?
@@ -18,7 +19,9 @@ struct TrendsView: View {
             let expanded = geometry.size.width >= 760
             ScrollView {
                 VStack(alignment: .leading, spacing: 22) {
+                    CasePageHeader(eyebrow: "The pattern", title: "Follow the evidence", subtitle: "Scrub a graph to inspect the exact week.", symbol: "chart.xyaxis.line", tint: .teal)
                     Picker("Period", selection: $count) { Text("4W").tag(4); Text("8W").tag(8); Text("3M").tag(13); Text("6M").tag(26); Text("1Y").tag(52); Text("ALL").tag(Int.max) }.pickerStyle(.segmented)
+                        .sensoryFeedback(.selection, trigger: count)
                     distanceChart
                     if expanded {
                         HStack(alignment: .top, spacing: 20) {
@@ -36,7 +39,9 @@ struct TrendsView: View {
                 .frame(maxWidth: .infinity)
             }
         }
-        .background(AmbientBackdrop()).navigationTitle("Trends").onAppear { withAnimation(.easeOut(duration: 0.55)) { revealCharts = true } }
+        .background(AmbientBackdrop()).navigationTitle("Trends").onAppear {
+            withAnimation(reduceMotion ? nil : .smooth(duration: 0.65)) { revealCharts = true }
+        }
             .onChange(of: count) { selectedWeekDate = nil }
     }
     private var distanceChart: some View {
@@ -81,7 +86,10 @@ struct TrendsView: View {
                 })
                 .frame(height: 180)
                 .opacity(revealCharts ? 1 : 0)
-                .animation(.smooth(duration: 0.45), value: count)
+                .scaleEffect(revealCharts || reduceMotion ? 1 : 0.96)
+                .blur(radius: revealCharts || reduceMotion ? 0 : 4)
+                .animation(reduceMotion ? nil : .smooth(duration: 0.45), value: count)
+                .animation(reduceMotion ? nil : .smooth(duration: 0.65), value: revealCharts)
             Text(explanation).font(.footnote).foregroundStyle(.secondary)
             CardClue(lines: ["This graph is a clue, not a confession.", "Look for repeats before naming a trend."])
         }.frame(maxWidth: .infinity, alignment: .leading).padding().background(.thinMaterial, in: RoundedRectangle(cornerRadius: 18))
